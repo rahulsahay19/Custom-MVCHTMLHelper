@@ -1,6 +1,6 @@
 ﻿@using CustomHTMLHelpers.CustomHelpers
 @{
-    ViewBag.Title = "About Paul's Training Company";
+    ViewBag.Title = "Custom MVC Helpers";
 }
 
 <h1>About Rahul Sahay</h1>
@@ -10,22 +10,23 @@
 <div class="well well-sm">
     <div class="row">
         <div class="col-md-2">
-            @Html.Image("../Images/Me.jpg","Rahul Sahay","img-responsive img-rounded")
-            
+            @Html.Image("../Images/Me.jpg", "Rahul Sahay", "img-responsive img-rounded", "imgRahul",
+           new { data_sample = "Rahul Image", data_dummy = "myPic" })
+
         </div>
         <div class="col-md-10">
             I'm Software Developer, Microsoft MVP. I write code for major ecommerce, banking companies. I have written code which you have already experienced. I am blogger; blog on all microsoft related stuffs. Basically, I code, write, speak, learn, train and listen - usually not in that order.
-           </div>
+        </div>
     </div>
 </div>
 
 <div class="well well-sm">
     <div class="row">
         <div class="col-md-2">
-           @Html.Image("../Images/SPA.jpg", "Building SPA", "img-responsive img-rounded")
+            @Html.Image("../Images/SPA.jpg", "Building SPA", "img-responsive img-rounded")
         </div>
         <div class="col-md-10">
-            A single-page application (SPA), is a web application or web site that fits on a single web page with the goal of providing a more fluid user experience compare to desktop application. Experience the app at http://moviereview.rahulsahay.com/ 
+            A single-page application (SPA), is a web application or web site that fits on a single web page with the goal of providing a more fluid user experience compare to desktop application. Experience the app at http://moviereview.rahulsahay.com/
         </div>
     </div>
 </div>

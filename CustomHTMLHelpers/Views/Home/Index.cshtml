@@ -3,11 +3,43 @@
 }
 
 <div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <h1>Building Custom HTML Helpers</h1>
+    <p class="lead">Extending MVC and making the components more reusable for normal things.</p>
+    <p><a href="http://myview.rahulnivi.net" class="btn btn-primary btn-lg">My View &raquo;</a></p>
 </div>
 
+<!-- ** BEGIN SEARCH AREA ** -->
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h1 class="panel-title">Search for Movies</h1>
+    </div>
+    <div class="panel-body">
+        <div class="form-group">
+           
+        </div>
+    </div>
+    <div class="panel-footer">
+        <button id="btnSearch"
+                class="btn btn-sm btn-primary"
+                data-pdsa-action="search">
+            <i class="glyphicon glyphicon-search"></i>
+            &nbsp;Search
+        </button>
+        <button id="btnReset"
+                class="btn btn-sm btn-primary"
+                data-pdsa-action="resetsearch">
+            <i class="glyphicon glyphicon-share-alt"></i>
+            &nbsp;Reset
+        </button>
+        <button id="btnAdd"
+                class="btn btn-sm btn-success"
+                data-pdsa-action="add">
+            <i class="glyphicon glyphicon-plus"></i>
+            &nbsp;Add
+        </button>
+    </div>
+</div>
+<!-- ** END SEARCH AREA ** -->
 <div class="row">
     <div class="col-md-4">
         <h2>Getting started</h2>
