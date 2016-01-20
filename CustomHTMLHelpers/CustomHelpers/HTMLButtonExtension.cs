@@ -14,10 +14,10 @@ namespace CustomHTMLHelpers.CustomHelpers
             string cssClass,
             string name,
             string title,
-            bool isFormNoValidate=false,
-            bool isAutoFocus =false,
-            HTMLCommonExtensions.HTMLButtonTypes buttonTypes = HTMLCommonExtensions.HTMLButtonTypes.submit,
-            string MovieReviewAction ="",
+            bool isFormNoValidate,
+            bool isAutoFocus,
+            HTMLCommonExtensions.HTMLButtonTypes buttonTypes,
+            string MovieReviewAction,
             object htmlAttribs=null)
         {
             TagBuilder tb = new TagBuilder("button");
@@ -83,6 +83,39 @@ namespace CustomHTMLHelpers.CustomHelpers
             }
 
             return MvcHtmlString.Create(tb.ToString());
+        }
+
+        //Created Overloads 
+        public static MvcHtmlString BootstrapButton(
+            this HtmlHelper htmlHelper,
+            string innerHTML,
+            object htmlAttribs = null)
+        {
+            return HTMLButtonExtension.BootstrapButton(htmlHelper,
+                innerHTML, String.Empty, String.Empty, String.Empty, false, false,
+                HTMLCommonExtensions.HTMLButtonTypes.submit, String.Empty, htmlAttribs);
+        }
+
+        public static MvcHtmlString BootstrapButton(
+            this HtmlHelper htmlHelper,
+            string innerHTML,
+            string cssClass,
+            object htmlAttribs = null)
+        {
+            return HTMLButtonExtension.BootstrapButton(htmlHelper,
+                innerHTML,cssClass, String.Empty, String.Empty, false, false,
+                HTMLCommonExtensions.HTMLButtonTypes.submit, String.Empty, htmlAttribs);
+        }
+        public static MvcHtmlString BootstrapButton(
+           this HtmlHelper htmlHelper,
+           string innerHTML,
+           string cssClass,
+           string MovieReviewAction,
+           object htmlAttribs = null)
+        {
+            return HTMLButtonExtension.BootstrapButton(htmlHelper,
+                innerHTML, cssClass, String.Empty, String.Empty, false, false,
+                HTMLCommonExtensions.HTMLButtonTypes.submit,MovieReviewAction, htmlAttribs);
         }
     }
 }
