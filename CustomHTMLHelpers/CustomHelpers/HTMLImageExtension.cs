@@ -40,13 +40,8 @@ namespace CustomHTMLHelpers.CustomHelpers
                 tb.AddCssClass(cssClass);
             }
 
-            if (!string.IsNullOrWhiteSpace(name))
-            {
-                name = TagBuilder.CreateSanitizedId(name);
-                //Then generate id using tagbuilder variable
-                tb.GenerateId(name);
-                tb.MergeAttribute("name",name);
-            }
+            HTMLCommonExtensions.AddName(tb,name,"");
+            
 
             tb.MergeAttributes(HtmlHelper.AnonymousObjectToHtmlAttributes(htmlAttrib));
             //return HTML encoded string

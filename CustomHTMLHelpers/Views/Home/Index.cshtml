@@ -1,4 +1,5 @@
-﻿@{
+﻿@using CustomHTMLHelpers.CustomHelpers
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -15,28 +16,43 @@
     </div>
     <div class="panel-body">
         <div class="form-group">
-           
+
         </div>
     </div>
     <div class="panel-footer">
-        <button id="btnSearch"
-                class="btn btn-sm btn-primary"
-                data-pdsa-action="search">
-            <i class="glyphicon glyphicon-search"></i>
-            &nbsp;Search
-        </button>
-        <button id="btnReset"
-                class="btn btn-sm btn-primary"
-                data-pdsa-action="resetsearch">
-            <i class="glyphicon glyphicon-share-alt"></i>
-            &nbsp;Reset
-        </button>
-        <button id="btnAdd"
+        @Html.BootstrapButton("<i class='glyphicon glyphicon-search'></i>&nbsp;Search",
+            "btn-sm btn-primary",
+            "searchButton",
+            "Click here to search!",
+            false,
+            true,
+            HTMLCommonExtensions.HTMLButtonTypes.button,
+            "search")
+
+        @Html.BootstrapButton("<i class='glyphicon glyphicon-share-alt'></i>&nbsp;Reset",
+            "btn btn-sm btn-danger",
+            "resetButton",
+            "Click here to reset!",
+            false,
+            true,
+            HTMLCommonExtensions.HTMLButtonTypes.reset,
+            "reset")
+
+        @Html.BootstrapButton("<i class='glyphicon glyphicon-plus'></i>&nbsp;Add",
+            "btn btn-sm btn-info",
+            "addButton",
+            "Click here to add!",
+            false,
+            true,
+            HTMLCommonExtensions.HTMLButtonTypes.submit,
+            "add")
+
+       @* <button id="btnAdd"
                 class="btn btn-sm btn-success"
                 data-pdsa-action="add">
             <i class="glyphicon glyphicon-plus"></i>
             &nbsp;Add
-        </button>
+        </button>*@
     </div>
 </div>
 <!-- ** END SEARCH AREA ** -->
