@@ -14,6 +14,25 @@ namespace CustomHTMLHelpers.CustomHelpers
             button,
             reset
         }
+
+        public enum HTML5InputTypes
+        {
+            //make sure below values matches exactly with HTML 5 inputs
+            //This is to cut the additional switch statement
+            text,
+            color,
+            date,
+            datetime,
+            email,
+            month,
+            number,
+            password,
+            search,
+            tel,
+            time,
+            url,
+            week
+        }
         public static void AddName(TagBuilder tb, string name, string id)
         {
             if (!string.IsNullOrWhiteSpace(name))

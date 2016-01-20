@@ -1,4 +1,5 @@
-﻿@model CustomHTMLHelpers.Models.RegisterViewModel
+﻿@using CustomHTMLHelpers.CustomHelpers
+@model CustomHTMLHelpers.Models.RegisterViewModel
 @{
     ViewBag.Title = "Register";
 }
@@ -14,24 +15,34 @@
     <div class="form-group">
         @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+            @Html.BootstrapTextBoxFor(m => m.Email,HTMLCommonExtensions.HTML5InputTypes.email, "Email","Enter Email here",true,true)
         </div>
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
-            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+            @Html.BootstrapTextBoxFor(m=>m.Password,HTMLCommonExtensions.HTML5InputTypes.password,"Password", "Enter Password here",true,false)
+            @*@Html.PasswordFor(m => m.Password, new { @class = "form-control" })*@
         </div>
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
-            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+            @*@Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })*@
+            @Html.BootstrapTextBoxFor(m => m.ConfirmPassword, HTMLCommonExtensions.HTML5InputTypes.password, "Password", "Enter Password again", true, false)
         </div>
     </div>
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Register" />
+            @*<input type="submit" class="btn btn-default" value="Register" />*@
+            @Html.BootstrapButton("<i class='glyphicon glyphicon-plus'></i>&nbsp;Register",
+            "btn-sm btn-primary",
+            "registerButton",
+            "Click here to Register!",
+            false,
+            true,
+            HTMLCommonExtensions.HTMLButtonTypes.submit,
+            "register")
         </div>
     </div>
 }

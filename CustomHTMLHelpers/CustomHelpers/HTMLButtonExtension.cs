@@ -22,19 +22,18 @@ namespace CustomHTMLHelpers.CustomHelpers
         {
             TagBuilder tb = new TagBuilder("button");
 
-            //Below Piece of code commented, just to take effect of other button css classes
-          /*  if (!string.IsNullOrWhiteSpace(cssClass))
+            if (!string.IsNullOrWhiteSpace(cssClass))
             {
                 //Check for bootstrap stuff say btn-
-                if (!cssClass.Contains("btn-"))
+                if (cssClass.Contains("btn-"))
                 {
-                    cssClass = "btn-primary" + cssClass;
+                    cssClass = "btn-primary " + cssClass;
                 }
                 else
                 {
                     cssClass = "btn-primary";
                 }
-            }*/
+            }
 
             //Adding CSS class in the reverse order as last one will attach first
             tb.AddCssClass(cssClass);

@@ -173,6 +173,7 @@
     <Compile Include="CustomHelpers\HTMLButtonExtension.cs" />
     <Compile Include="CustomHelpers\HTMLCommonExtensions.cs" />
     <Compile Include="CustomHelpers\HTMLImageExtension.cs" />
+    <Compile Include="CustomHelpers\HTMLTextboxExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
