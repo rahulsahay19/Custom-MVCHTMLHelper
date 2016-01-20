@@ -60,6 +60,10 @@ namespace CustomHTMLHelpers.Models
 
         [Display(Name = "Remember me?")]
         public bool RememberMe { get; set; }
+
+        [Display(Name = "Available")]
+        public bool Available { get; set; }
+
     }
 
     public class RegisterViewModel
