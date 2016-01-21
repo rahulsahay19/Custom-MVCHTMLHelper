@@ -11,9 +11,9 @@ using System.Web.Routing;
 
 namespace CustomHTMLHelpers.CustomHelpers
 {
-    public static class HTMLCheckboxExtensions
+    public static class HTMLRadioButtonExtensions
     {
-        public static MvcHtmlString BootstrapCheckBoxFor<TModel>(
+        public static MvcHtmlString BootstrapRadioButtonFor<TModel>(
             this HtmlHelper<TModel> htmlHelper,
             Expression<Func<TModel, bool>> expression,
             string text,
@@ -40,20 +40,20 @@ namespace CustomHTMLHelpers.CustomHelpers
                 routeValueDictionary.Add("autofocus", "autofocus");
             }
 
-            //Open the checkbox
+            //Open the RadioButton
             if (useInline)
             {
-                sb.Append("<label class='checkbox'>");
+                sb.Append("<label class='radio-inline'>");
             }
             else
             {
-                sb.Append("<div class='checkbox'>");
+                sb.Append("<div class='radio'>");
                 sb.Append("<label>");
             }
 
 
-            //Building the checkbox using Input Extension
-            sb.Append(InputExtensions.CheckBoxFor(htmlHelper, expression, routeValueDictionary));
+            //Building the RadioButton using Input Extension
+            sb.Append(InputExtensions.RadioButtonFor(htmlHelper, expression, routeValueDictionary));
 
             //Adding text
             sb.Append(text);
@@ -73,17 +73,17 @@ namespace CustomHTMLHelpers.CustomHelpers
             return MvcHtmlString.Create(sb.ToString());
         }
 
-        public static MvcHtmlString BootstrapCheckBoxFor<TModel>(
+        public static MvcHtmlString BootstrapRadioButtonFor<TModel>(
             this HtmlHelper<TModel> htmlHelper,
             Expression<Func<TModel, bool>> expression,
             string text,
             object htmlAttrib = null)
         {
-            return HTMLCheckboxExtensions.BootstrapCheckBoxFor(htmlHelper, expression, text, String.Empty, false, false,
+            return HTMLRadioButtonExtensions.BootstrapRadioButtonFor(htmlHelper, expression, text, String.Empty, false, false,
                 null);
         }
 
-        public static MvcHtmlString BootstrapCheckBoxFor<TModel>(
+        public static MvcHtmlString BootstrapRadioButtonFor<TModel>(
             this HtmlHelper<TModel> htmlHelper,
             Expression<Func<TModel, bool>> expression,
             string text,
@@ -91,7 +91,7 @@ namespace CustomHTMLHelpers.CustomHelpers
             bool isAutoFocus,
             object htmlAttrib = null)
         {
-            return HTMLCheckboxExtensions.BootstrapCheckBoxFor(htmlHelper, expression, text, title, isAutoFocus, false,
+            return HTMLRadioButtonExtensions.BootstrapRadioButtonFor(htmlHelper, expression, text, title, isAutoFocus, false,
                 null);
         }
     }
